@@ -4,6 +4,8 @@
 // 4 traducir a codigo
 // 5 probar y corregir 
 
+const { jsx } = require("react/jsx-runtime")
+
 // tipos de variables
 const country = "España"
 let age = 20
@@ -155,7 +157,7 @@ saludaPersonas("Maria", "Perez")
 
 
 //funciones con return 
-function multiplicar (a, b) {
+function multiplicar(a, b) {
     return a * b //devolver el producto
 }
 
@@ -166,10 +168,10 @@ console.log(resultado);
 
 
 //funcion expresion 
-const dividir = function(a, b) {
+const dividir = function (a, b) {
     return a / b
 }
-console.log(dividir(10,2));
+console.log(dividir(10, 2));
 
 
 //funcion flecha 
@@ -182,4 +184,65 @@ console.log(dividir(10,2));
 //funcion flecha corta (return implicito)
 const cuadrado = x => x * x
 console.log(cuadrado(5));
+
+
+// dia 2 repaso js 
+
+
+// array 
+
+// indice       0           1       2         3          posicion
+let fruta = ["manzana", "banana", "pera", "naranja"]
+// length       1          2        3         4          tamaño, longitud 
+
+console.log("tamaño de frutas " + fruta.length);
+console.log(fruta[3]);
+console.log(fruta[fruta.length - 1]);
+
+// recorre el array completo 
+for (let i = 0; i < fruta.length; i++) {
+    console.log("Fruta en la posicion " + i + ": " + fruta[i]);
+
+}
+
+// los metodos son funciones integradas en Js 
+let colores = ["rojo", "verde"]
+
+colores.push("azul")
+colores.unshift("amarillo")
+
+colores.pop()
+colores.shift()
+
+console.log(colores);
+
+console.log(colores.includes("rojo"));
+console.log(colores.indexOf("amarillo"));
+
+// objetos
+
+const cursoProgramacion = {
+    titulo: "javascrip desde cero",
+    categoria: "desarrollo web",
+    duracionHoras: 45,
+    precio: 9.99,
+    estaActivo: true,
+    descuento: null,
+    fechaFinalizacion: undefined,
+    tecnologias: ["HTML", "CSS", "js", "git"],
+    instructor: {
+        nombre: "Alexis",
+        experiencia: 11,
+        coontacto: {
+            email: "alexis@123"
+        }
+    },
+    obtenerInformacionCompleta() {
+        return `El curso "${this.titulo}" dura ${this.duracionHoras} horas y es dictado por ${this.instructor.nombre}.`;
+    }
+}
+
+console.log(cursoProgramacion.titulo);
+console.log(cursoProgramacion.instructor.coontacto.email);
+console.log(cursoProgramacion.obtenerInformacionCompleta());
 
